@@ -2,6 +2,32 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Run the frontend in a Docker container
+
+### Build the container
+
+Make sure you have the following software installed:
+
+- node with NPM
+- docker
+- make
+
+Run `make build-image` to build the image.
+
+### Run the container
+
+To run the frontend in a Docker container, run the following command:
+
+```bash
+$ docker run --env API_HOST_URL=https://inference.hackzurich2021.hack-with-admin.ch -p 80:80 proton-inference-frontend:latest
+```
+
+Change the `API_HOST_URL` variable to redirect the queries to the desired API instance.
+
+The TCP port `80` need to be exposed to make the app reachable.
+
+If you want to secure the api using HTTPS, put it behind a HTTP proxy supports HTTPS.
+
 ## Available Scripts
 
 In the project directory, you can run:
